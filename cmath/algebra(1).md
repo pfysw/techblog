@@ -43,7 +43,7 @@
  
 一般来说群并没有规定运算要满足交换律，下面来说明上面定义的置换是群，首先定义置换的运算{・}如下，例如（1 2 3 4 5）・ (1 3)(2 4)(5)的计算结果如下    
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416095726217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)       
+![在这里插入图片描述](../pic/1.1.png)       
      
 即   
  
@@ -187,13 +187,13 @@ FivePerm *FivePermOp(FivePerm *p1, FivePerm *p2)
 ```
 对于置换集合可以再定义一个共轭运算{◦}，我们来计算 (1 3)(2 4)(5) ◦（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416112857603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](../pic/1.2.png)
 
 这里我们发现以下等式成立，记为公式(1)      
 <img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{aligned}&space;&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\cdot&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}&space;\\&space;=&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}\circ\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\\&space;=&\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;4&&space;5&&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}&space;\end{aligned}&space;\qquad&space;\qquad&space;(1)&space;$$" title="$$ \begin{aligned} & \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\cdot \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix} \\ =& \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix}\circ\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\\ =&\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 4& 5& 2 & 3 & 1 \end{pmatrix} \end{aligned} \qquad \qquad (1) $$" />     
 即置换的乘法运算与其2个元素交换后的共轭运算是相等的，那么为什么会相等呢，我们先用代码来实现共轭运算，上面举的例子容易搞混，我再举一个典型的例子，
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416120839733.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](../pic/1.3.png)
 
 
 按照上图得到代码的具体实现
