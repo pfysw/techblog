@@ -1,0 +1,67 @@
+如果是A->(B->C)型，先假设A,\~(B->C)，由此推出B和\~C，对\~C反复操作后再代入A
+
+如果是A->\~(B->C)型，先假设A，再推出B和\~C，再推出\~(B->C)
+
+公式：<br>
+A>>B = A>((B>1)>2)<br>
+(1>(1>2))>((A>1)>2) = A<br>
+(A+B)>>L = A+(B>L);
+
+关键问题在于mp不原子
+
+找出一个定理的所有mp合成方法
+
+命题的最简形式
+
+化简方法，用等价方法去掉双重否定：((A->((~B->C)->D)) -> (A->(~~B->D)))
+
+Sqlite大批量导入数据提高效率的几种方式
+https://www.cnblogs.com/HPAHPA/articles/7662268.html
+SQLite Backup API
+https://cloud.tencent.com/developer/section/1420048
+http://www.cnblogs.com/stephen-liu74/archive/2012/02/27/2326309.html
+sqlite In-Memory Databases
+https://cloud.tencent.com/developer/section/1420011
+sqlite 内存数据库的attach
+https://blog.csdn.net/striving1234/article/details/72845917
+SQLite3 C语言API使用说明
+https://blog.csdn.net/zgrjkflmkyc/article/details/45150951
+rtree
+https://blog.csdn.net/wzf1993/article/details/79547037
+mmap使用细节
+https://blog.csdn.net/bbzhaohui/article/details/81665370
+https://www.cnblogs.com/hehehaha/archive/2013/03/14/6332946.html
+windows查看磁盘扇区命令
+fsutil fsinfo ntfsinfo c:
+stackoverflow
+https://itranslater.com/
+https://www.soinside.com/
+OpenGL进行简单的通用计算实例
+https://www.cnblogs.com/riddick/p/6885680.html
+视频
+https://blog.csdn.net/qq_36449541/article/details/81485022
+https://blog.csdn.net/leixiaohua1020/article/details/18893769#comments
+H.264图像编码基础知识以及专业词语
+https://blog.csdn.net/weixin_37921201/article/details/88982219
+
+1.形变特征
+2.存在消元
+3.分解递归
+
+在应用程序中替换Linux中Glibc的malloc的四种方法
+https://blog.csdn.net/littlefang/article/details/6052563
+
+关键是寻找一个更好的表达形式，那么表达形式能否自动生成
+学会了的意思是把这个东西在脑子里组成一个特定的结构
+先学习各种结构，然后融会贯通
+把自己的思考过程提取成代码
+先找到结构的框架边界，再往框架里填东西，各种各样的框架。
+
+GLFW与Vulkan
+https://www.cnblogs.com/bitzhuwei/archive/2019/06/22/11067313.html
+glew工作原理
+https://blog.csdn.net/u011760195/article/details/101483995?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control
+glew和glfw区别
+https://blog.csdn.net/qq_15267341/article/details/83305856?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control
+glfw
+http://ogldev.atspace.co.uk/
