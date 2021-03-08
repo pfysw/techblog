@@ -1,6 +1,6 @@
-如果是A->(B->C)型，先假设A,\~(B->C)，由此推出B和\~C，对\~C反复操作后再代入A
+如果是A->(B->C)型，先假设A,~(B->C)，由此推出B和~C，对~C反复操作后再代入A
 
-如果是A->\~(B->C)型，先假设A，再推出B和\~C，再推出\~(B->C)
+如果是A->~(B->C)型，先假设A，再推出B和~C，再推出~(B->C)
 
 公式：<br>
 A>>B = A>((B>1)>2)<br>
@@ -65,3 +65,120 @@ glew和glfw区别
 https://blog.csdn.net/qq_15267341/article/details/83305856?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control
 glfw
 http://ogldev.atspace.co.uk/
+
+把结构层次化后才能更好的运用递归
+
+A B C E F G按顺序排列，把在C左边的元素A和B放在bitmap里，这时候在C和E之前插入D，D左边元素的bitmap是由C的bitmap加上C元素组成的
+
+层次化的内存分配
+似乎只要到达某个点，就可以做到全自动化（不断拟合结构来递归
+
+动态链接库dlopen等函数的使用
+https://blog.csdn.net/qq_22122811/article/details/52590182
+
+批处理：start /wait xxx.exe 等待程序执行结束
+
+geany插件开发
+https://www.geany.org/manual/reference/howto.html
+
+moba、ahk、Pulover's Macro Creator
+
+自己编译OpenGL项目踩过的坑
+https://www.cnblogs.com/wulc/p/11627778.html
+
+gtk的界面加上opengl
+https://blog.csdn.net/Since_lily/article/details/86706969
+从网上下了glew包，然后把glew32.dll放在C:\Windows\SysWOW64，编译-lglew32 -lglu32 -lopengl32，无法通过，glu.h里面要添加#define CALLBACK。解决后，又有一个问题找不到-lglew32，把glew32.dll放在D:\msys64\mingw64\lib就可以编译通过，运行时找不到glew32.dll，msys不识别C:\Windows\SysWOW64（因为这是vs的），然后添加环境变量D:\msys64\usr\lib（之前脑子晕了，把mingw64\lib当成了\usr\lib），然后还是找不到glew32.dll，然后以为还需要glew32.lib（其实不需要的，这个是vs用的），把glew32.dll放在D:\msys64\usr\lib就可以了，环境变量设的哪里，dll就放哪里
+
+gtk的demo里有opengl，是基于libepoxy
+
+用Eclipse写Shader？ 今天看到了一个神器，Synthclipse。
+http://blog.jmecn.net/synthclipse/
+
+Linux下的调试工具strace与ltrace
+https://imsoul.blog.csdn.net/article/details/83143290?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control
+
+1.子结构包含子结构
+2.中间结果溯源
+3.逆向无回环路径
+4.边界轮廓递归分解
+
+QT OpenGL绘制三维图形（立方体、圆柱体、圆锥、球体、圆环等等）
+https://www.cnblogs.com/MakeView660/p/10436685.html
+qt opengl 3d基本形状圆锥
+https://blog.csdn.net/wanghualin033/article/details/83552042
+
+HS规则的代码实现和MP是同一个层次，但HS也可以由MP合成
+有些硬件乘法器和加法器在电路上是同一个层次，但乘法也可以由加法合成。
+
+PoinData的LineData再封装一层，用来表示线段
+三角形中线交于一点，中点、3等分点、5等分点（素数等分点建立容器)
+
+a|b b|c  a|c  素数的构造
+递归的生成一个数据结构
+
+linux：binutils工具集---as命令
+Linux下两种汇编工具简单用法: NASM And AS
+https://blog.csdn.net/qq_33528164/article/details/79515645
+
+c语言文件定位：fseek()函数和ftell()函数的使用
+
+Windows音频编程:Win32 Wave API 的使用
+https://blog.51cto.com/2339637/1354925
+
+小循环与大循环
+
+如何使用GCC生成动态库和静态库
+https://www.cnblogs.com/postw/p/9670791.html
+
+Makefile常用调试方法
+https://www.cnblogs.com/lotgu/p/5936465.html
+make 调试命令
+https://blog.csdn.net/carolzhang8406/article/details/55505836
+shell脚本调试之工具——bashdb
+https://www.cnblogs.com/itcomputer/p/5011845.html
+
+sqlite3的3.31的testfixture.exe编译比较慢的原因是把所有的.c都重新编译一遍，
+并没有中间的.o文件，tclsqlite3.exe的编译是正常的，参考下怎么做
+
+对于{A命题集合}->{B命题集合}构成的大命题，有没有什么好的推理方法构建已经论证过的命题之间的联系，进而建立{A大命题集合}->{B大命题集合}的大大命题
+
+用C语言实现修改注册表RegCreateKeyEx  RegSetValueEx
+https://zhidao.baidu.com/question/156753542.html
+右键快捷键
+HKEY_CLASSES_ROOT\Directory\Background\shell
+新增command项设置
+D:\msys64\msys2_shell.cmd -mingw64 -here
+
+把共性抽出来
+
+怎么查看.a静态库所有打包进去的.o文件和函数接口信息？使用nm命令
+https://blog.csdn.net/h_o_w_e/article/details/50995824
+
+结构完全一样，只是所在层次不一样
+先做出来，然后再抽出共同的点
+层次结构越高，挂的信息也越多
+静态符号通过动态过程来生成，动态过程又反过来通过静态符号来表示
+概念生成的先后顺序，完备性定理的证明，方程思想
+
+不要太执着于概念的本源，目标是把复杂的过程等价变换成简单的，已经很
+简单的就不要去追究了，比如ax=0且x≠0，那么可以就直接得出a=0
+
+gdb之watch命令
+　　(gdb) rwatch 
+　当expr被读时，停住程序。
+　　(gdb) awatch 
+　当expr被读或被写时，停住程序。
+https://www.cnblogs.com/tekkaman/p/3506169.html
+
+有结构层次的场景不能使用暴力搜索，需要先探寻结构是怎么组成的
+(x1,x2)用（（1，0）（0，1））表示
+
+相似结构归为一类
+根据已有的结论避免不必要的搜索
+通过解方程的思想确认未知的棋（如何通过行棋来帮助更好的解方程
+通过悔棋的方式来提升棋力
+敌方是怎么看待自己的棋的
+未明时变子
+
+如何反复利用已有的结论
