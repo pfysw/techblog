@@ -2,9 +2,9 @@
 
 如果是A->~(B->C)型，先假设A，再推出B和~C，再推出~(B->C)
 
-公式：<br>
-A>>B = A>((B>1)>2)<br>
-(1>(1>2))>((A>1)>2) = A<br>
+公式：
+A>>B = A>((B>1)>2)
+(1>(1>2))>((A>1)>2) = A
 (A+B)>>L = A+(B>L);
 
 关键问题在于mp不原子
@@ -141,8 +141,6 @@ https://www.cnblogs.com/itcomputer/p/5011845.html
 sqlite3的3.31的testfixture.exe编译比较慢的原因是把所有的.c都重新编译一遍，
 并没有中间的.o文件，tclsqlite3.exe的编译是正常的，参考下怎么做
 
-对于{A命题集合}->{B命题集合}构成的大命题，有没有什么好的推理方法构建已经论证过的命题之间的联系，进而建立{A大命题集合}->{B大命题集合}的大大命题
-
 用C语言实现修改注册表RegCreateKeyEx  RegSetValueEx
 https://zhidao.baidu.com/question/156753542.html
 右键快捷键
@@ -184,7 +182,7 @@ https://www.cnblogs.com/tekkaman/p/3506169.html
 如何反复利用已有的结论
 怎么把数理逻辑的结构套在几何上，两个命题做mp时的结构补全能不能运用在画辅助线上
 补全结构是要有依据的
-怎么把过程抽象成一个个元素，然后再由已有的元素生成新的元素
+
 
 提取音频：
 cmd输入： ffmpeg -i 0.blv -f mp3 1.mp3 即可，1.mp3就是我要的音频了
@@ -209,9 +207,8 @@ P(A)->((P(A)->P(B))->P(B))
 
 以A、B、C及其组合作为命题常元
 以x1、x2、x3作为命题变元
-P是一个谓词，代笔是否是定理，以此构造一个谓词逻辑系统
+P是一个谓词，代表是否是定理，以此构造一个谓词逻辑系统
 
-师长下一步扛旗时，要救回来时只有2种方法，要么先于对方扛旗，要么处理掉师长，要处理掉师长搜索其他的着法是没有用的，主要搜索5线和下营的棋，如果没有那就没办法处理，有那么判断是不是大于等于师长或炸弹。
 
 相等公理：
 P(x1,x1)
@@ -241,7 +238,6 @@ https://blog.csdn.net/Zhili_wang/article/details/80934687
 对于不同的方向分支尽量把结构对齐进行统一处理
 
 如何构建出一个结构满足信息传递的要求
-如何根据目标反馈对结构进行调整
 
 现在有24个分支条件需要处理，如果用switch需要写24个case的代码，而且每个case里面要处理的逻辑可能搞混，但如果分成2*3*4种情况处理，也是24个分支，但是代码只需要写2+3+4=9种case
 
@@ -275,10 +271,180 @@ https://blog.csdn.net/hanxin1987216/article/details/4506800
 https://www.geogebra.org/
 
 外壳不变，里面的内容换掉
-一个结点里存放着一个链表，这个链表索引着不同环路的下一个结点，这样的链表如果有多个可以再串连成一个链表
 边调试边设计
 通过追踪源头来理解一个概念的形成
 结构体定义错误怎么弥补
 把回调函数作为结构组成的一部分
 
 调用GDB的call命令执行函数时要有返回值，否则可能会卡死
+加减乘除复合运算的表达式
+
+2021.4.6
+用main代替WinMain时，需要先通过GetModuleHandle获得hInstance
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
+int main()
+{
+	HINSTANCE hInstance = GetModuleHandle (NULL);
+
+"const wchar_t *" 类型的实参与 "LPCSTR" 类型的形参不兼容的原因和解决方法
+https://blog.csdn.net/cxm2643199642/article/details/105624148
+
+Spy++原理初探
+https://blog.csdn.net/asanscape/article/details/2140176
+vs2019 MFC 中 cannot open include file 'afxres.h' 问题解决方法，加路径就行了
+https://www.it610.com/article/1297529061022703616.htm
+tmschema.h，改为vsstyle.h
+
+很多人稍微得到一些负反馈就会做出一些比较极端的判断，其实不能把别人想的太笨也不能把别人想的太聪明。
+
+---------------------------------------------------------------
+2021.4.17
+--------------------------------------------------------------
+objdump -g xxx.exe  查看调试信息
+
+gtk编译后调试出错
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from D:/source/msys2package/source/mingw-w64-gtk3/src/build-x86_64-w64-mingw32/examples/drawing.exe...
+(gdb) l
+1       E:/mingwbuild/mingw-w64-crt-git/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory.
+(gdb) b activate
+Breakpoint 1 at 0x401567
+(gdb) q
+Makefile里相关地方加-g，替换libtool
+
+Zlib压缩算法：LZ77、LZ78、霍夫曼编码、滑动窗口、Rabin-Karp算法、哈希链、I/O缓冲区
+https://rtoax.blog.csdn.net/article/details/108986430?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.control
+
+---------------------------------------------------------------
+2021.4.22
+--------------------------------------------------------------
+主流嵌入式开源GUI比较（二）
+https://blog.csdn.net/anyuliuxing/article/details/99691721
+
+---------------------------------------------------------------
+2021.4.26
+--------------------------------------------------------------
+OpenGL Shader实例分析（7）雪花飘落效果
+https://www.jb51.net/article/157097.htm
+使用OpenGL绘制漂亮的围棋子
+https://www.cnblogs.com/acloud/archive/2011/12/12/drawchess.html
+
+是否尽量把结构体合成一种，然后用type标记不同类型
+国际象棋引擎
+https://tcec-chess.com/
+https://www.chess.com/computer-chess-championship
+
+建立棋子间的关系
+
+---------------------------------------------------------------
+2021.4.27
+--------------------------------------------------------------
+围棋引擎的GTP协议
+http://www.tianqiweiqi.com/go-gtp.html
+
+Stockfish是一个免费的，强大的UCI国际象棋引擎，源自Glaurung 2.1。
+它不是一个完整的国际象棋程序，需要一个与UCI兼容的GUI（例如XBoard与PolyGlot，Scid，Cute
+Chess，eboard，Arena，Sigma Chess，Shredder，Chess Partner或Fritz），以便舒适地使用。
+https://github.com/official-stockfish/Stockfish
+
+github加速:DevSidecar-1.2.2
+工具分享：(一)【dev-sidecar】解决Github无法访问，国内dns污染问题
+https://www.cnblogs.com/imtudou/p/14647683.html
+https://gitee.com/docmirror/dev-sidecar
+
+SIMD指令编程demo
+https://www.dazhuanlan.com/2020/02/01/5e3475c89d5bd/
+SIMD 编程的优势 --TickerTape Part 2
+https://software.intel.com/content/www/cn/zh/develop/articles/ticker-tape-part-2.html
+
+【csdn博客文章】导出备份
+https://blog.csdn.net/qq_38225558/article/details/95329395
+
+将CSDN博客内容保存为PDF，使用Google Chrome浏览器，在右上角点开设置一栏，找到更多工具—开发者工具，
+(function(){
+$("#side").remove();
+$("#comment_title, #comment_list, #comment_bar, #comment_form, .announce, #ad_cen, #ad_bot").remove();
+$(".nav_top_2011, #header, #navigator").remove();
+$(".p4course_target, .comment-box, .recommend-box, #csdn-toolbar, #tool-box").remove();
+$("aside").remove();
+$(".tool-box").remove();
+$("main").css('display','content'); 
+$("main").css('float','left'); 
+$(".option-box").remove();
+window.print();
+
+$("tool-box").remove();
+})();
+
+
+Libevent、libev、libuv、libhv三个网络库，都是c语言实现的异步事件库
+https://blog.csdn.net/qq_35886593/article/details/88898194
+【libevent 】libevent 多线程实现高并发
+https://blog.csdn.net/bandaoyu/article/details/105249103
+
+linux top按1命令查看资源
+taskset的简单用法--进程绑核
+https://blog.csdn.net/wangjianno2/article/details/45965385
+
+---------------------------------------------------------------
+2021.4.28
+--------------------------------------------------------------
+
+建立元素之间的关联性，进而提高搜索效率。
+
+怎样控制其他程序窗体上的窗口控件
+https://blog.csdn.net/mahushen/article/details/8238200
+如何控制其他程序窗体上的窗口控件(中)
+https://blog.csdn.net/VBEND/article/details/248147
+
+
+---------------------------------------------------------------
+2021.5.3
+--------------------------------------------------------------
+编译cfish的方法
+make -j24 numa=no build 
+
+addr2line -e cfish.exe -f 00100421AD5
+
+
+---------------------------------------------------------------
+2021.5.4
+--------------------------------------------------------------
+gcc下编译出现warning:implicit declaration of function 'strdup'
+https://blog.csdn.net/ximi0000/article/details/5491943
+如果是-std=c99或-std=c11，头文件中的函数声明不起作用，需要自己重新声明一遍
+基本上所有cfish报错都是strdup未声明直接或间接造成的
+
+管道通信
+https://blog.csdn.net/qq_22238021/article/details/80160179
+
+shell 块注释
+: '
+被注释的多行内容 
+'
+https://www.cnblogs.com/emanlee/p/3749911.html
+
+编译xboard出错，没有makeinfo用textinfo代替，没有cairo核gtk，注释掉假装有，等生成makefile之后再修改，接下来gtk2核gtk3的接口不兼容，那就没办法了
+
+---------------------------------------------------------------
+2021.5.6
+--------------------------------------------------------------
+Cheat Engine 修改内存工具
+如何打造一款游戏外挂
+https://www.cnblogs.com/LexMoon/p/wgjc.html
+游戏外挂设计终极教程
+https://blog.csdn.net/zhanghb1981/article/details/3855254
+C/C++反汇编与逆向分析学习笔记（1）--调试工具OllyDBG
+https://blog.csdn.net/u012278016/article/details/79472572
+C/C++反汇编与逆向分析学习笔记（2）--反汇编静态分析工具IDA
+https://blog.csdn.net/u012278016/article/details/79472608?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242
+
+---------------------------------------------------------------
+2021.5.7
+--------------------------------------------------------------
+录屏软件ScreenToGif
+
+---------------------------------------------------------------
+2021.5.8
+--------------------------------------------------------------
+把一个集合挂在一个元素上，这个集合的所有对外关系就绑定在了一个元素上，而不用去操作每个元素，当结构关系发生变化时把这个元素替换掉就可以了，而其他元素不用变
