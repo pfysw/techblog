@@ -306,11 +306,17 @@ gtk编译后调试出错
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from D:/source/msys2package/source/mingw-w64-gtk3/src/build-x86_64-w64-mingw32/examples/drawing.exe...
 (gdb) l
-1       E:/mingwbuild/mingw-w64-crt-git/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory.
+1       E:/mingwbuild/smingw-w64-crt-git/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory.
 (gdb) b activate
 Breakpoint 1 at 0x401567
 (gdb) q
 Makefile里相关地方加-g，替换libtool
+
+重要！！！！gtk源码目录里编译了一个dll，应用程序编译时也的确需要依赖该dll，但在实际运行的时候却是在使用/msys64/mingw64/bin里的dll
+用ldd命令查看动态库依赖
+即使把动态库改名，还是调用/msys64/mingw64/bin里的dll，因为动态库的文字是写进dll文件里的，所以应该在Makefile里改名把libgtk-3.la全部替换为libgtk-31.la
+#GTK_LINK_FLAGS = -Wl,-Bsymbolic-functions注释掉
+gobject-2.0改成gobject-2.1
 
 Zlib压缩算法：LZ77、LZ78、霍夫曼编码、滑动窗口、Rabin-Karp算法、哈希链、I/O缓冲区
 https://rtoax.blog.csdn.net/article/details/108986430?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.control
@@ -404,7 +410,7 @@ https://blog.csdn.net/VBEND/article/details/248147
 编译cfish的方法
 make -j24 numa=no build 
 
-addr2line -e cfish.exe -f 00100421AD5
+addr2line -e cfish.exe -f 65cac849
 
 
 ---------------------------------------------------------------
@@ -500,3 +506,103 @@ https://www.jianshu.com/p/beb9580b0a07/
 艾滋病破坏的就是免疫力，凭什么相信免疫力能压制艾滋病
 毒品破坏的就是意志力，凭什么相信意志力能压制毒品
 资本...
+
+---------------------------------------------------------------
+2021.5.21
+--------------------------------------------------------------
+如何删除github commit记录
+https://www.cnblogs.com/zhaotianff/p/13860307.html
+
+---------------------------------------------------------------
+2021.5.22
+--------------------------------------------------------------
+硬件断点和软件断点(整理)
+https://blog.csdn.net/baidu_35679960/article/details/106985428
+原创]反调试技巧总结-原理和实现(1)(2)(3)(4)(5)(6)
+https://www.kanxue.com/chm.htm?id=3483&pid=node1000672
+Windows 下的常用调试API断点
+https://www.cnblogs.com/LyShark/p/13071792.html
+win32调试API学习心得
+https://blog.csdn.net/junbopengpeng/article/details/31393751
+Windows 网络编程：调试 API   VirtualProtect  ***重要***
+https://www.sohu.com/a/293895045_653604
+Awesome-Windows-Debug
+https://github.com/nixawk/Awesome-Windows-Debug
+Windows_Debugger-Cmd-r3  ***重要***
+https://github.com/TimelifeCzy/Windows_Debugger-Cmd-r3
+Windows Hook原理与实现  ***重要***
+https://blog.csdn.net/m0_37552052/article/details/81453591s
+linux内存地址断点,开发一个 Linux 调试器（三）：寄存器和内存
+https://blog.csdn.net/weixin_39929377/article/details/116819823
+
+ShellExecute详细用法(可以单独打开一个文件)
+https://blog.csdn.net/qq_24127015/article/details/83342641
+内存断点与硬件断点
+https://www.cnblogs.com/onetrainee/p/11987083.html
+https://www.zhihu.com/question/52625624
+valgrind的使用、原理（虚拟机的方式，速度较慢
+https://blog.csdn.net/yinliyinli/article/details/51346431
+
+project1.exe 已触发了一个断点。_滥用方法VS检测手段：深入探究Windows硬件断点和异常...
+https://blog.csdn.net/weixin_42297562/article/details/113312072
+WINDOWS上的 API HOOK 技术
+https://segmentfault.com/a/1190000012993626
+Windows Dll注入与API HOOK
+https://blog.csdn.net/hurricane_0x01/article/details/51123250
+HOOK API技术 （demo
+https://blog.csdn.net/qjh5606/article/details/102530311
+
+---------------------------------------------------------------
+2021.5.27
+--------------------------------------------------------------
+指针函数的嵌套
+每一条语句都对应着逻辑论断
+根据关系来分类，然后再确定步骤的先后顺序，去掉不必要的分支判断
+
+---------------------------------------------------------------
+2021.5.28
+--------------------------------------------------------------
+多包一层
+
+vulkan mesa opengl
+
+熟悉的路径继续强化
+
+
+---------------------------------------------------------------
+2021.5.30
+--------------------------------------------------------------
+windows上的strace
+https://github.com/ipankajg/stracent
+
+把函数放在网络结点里
+
+---------------------------------------------------------------
+2021.5.31
+--------------------------------------------------------------
+gdb传参，\gdb-7.9-2\src\gdb-7.9\gdb\doc\gdb.info-1
+   You can optionally have 'gdb' pass any arguments after the executable
+file to the inferior using '--args'.  This option stops option
+processing.
+     gdb --args gcc -O2 -c foo.c
+
+Nuklear折腾记
+pacman -S mingw-w64-x86_64-glew
+pacman -S mingw-w64-x86_64-glfw
+
+---------------------------------------------------------------
+2021.6.1
+--------------------------------------------------------------
+如何一个程序里面加载两个同名不同版本的DLL
+https://bbs.csdn.net/topics/390359027
+
+---------------------------------------------------------------
+2021.6.4
+--------------------------------------------------------------
+搜索是附着在结构上的，搜索出来的东西改了结构，从而产生新的 搜索方式
+---------------------------------------------------------------
+2021.6.5
+--------------------------------------------------------------
+共识的力量
+
+当搜索次数太多时一定要记得分类
